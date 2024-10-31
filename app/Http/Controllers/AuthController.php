@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller
 {
+    public function indexLogin(){
+        return view('auth/login');
+    }
+
     public function register(Request $request){
         $validator = Validator::make($request->all(), [
             'username' => 'required|string|max:255|unique:users',
